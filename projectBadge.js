@@ -3,7 +3,7 @@
 
 // YUI module pattern, keeping the namespace clean while providing a hook from the markup
 var projectBadge = function () {
-	
+  
   var serviceUri = 'http://adam.kahtava.com/services/open-source/projects.json';
   var accounts = '?project-host:username=';
   var filters = '&filters=';
