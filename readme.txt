@@ -1,5 +1,5 @@
-The Open Source Project Badge. 
+The Open Source Project Badge.Display your public projects from both GitHub and Google Code.
 
-Display your public projects from both GitHub and Google Code in a wicked wild widget. :)
+View a live example here: http://adam.kahtava.com/etcetera/open-source-project-badge/
 
 Adam Kahtava - http://adam.kahtava.com/ - MIT Licensed

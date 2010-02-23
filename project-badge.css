@@ -2,6 +2,7 @@
   font-size: 14px;
   width: 230px;
   font-family: helvetica,arial,freesans,clean,sans-serif;
+  background-color: #FFF;
 }
 #project-badge a {
   font-weight: bold;
@@ -13,7 +14,7 @@
   margin: 0px;
 }
 #project-badge li{
-  padding-left: 22px;
+  padding-left: 24px;
   list-style-type: none;
   border: 1px solid #FFF;
   border-bottom: 1px solid #e5e5e5;
@@ -46,7 +47,7 @@
   display: block;
   position: absolute;
   margin-left: 1px;
-  width: 196px;
+  width: 194px;
   overflow: hidden;
   font-size: 12px;
   border: solid 1px #e5e5e5;
@@ -66,6 +67,9 @@
 }
 #project-badge .extended {
   display: none;
+}
+#project-badge span.credits {
+  padding-left: 24px;
 }
 #project-badge .credits a, #project-badge .credits {
   color: #CCC;

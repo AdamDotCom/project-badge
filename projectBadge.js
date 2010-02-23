@@ -1,10 +1,14 @@
 // Project Badge Widget
 // Adam Kahtava - http://adam.kahtava.com/ - MIT Licensed
+
+// YUI module pattern, keeping the namespace clean while providing a hook from the markup
 var projectBadge = function () {
 	
   var serviceUri = 'http://adam.kahtava.com/services/open-source/projects.json';
   var accounts = '?project-host:username=';
   var filters = '&filters=';
+  
+  // Template / partial that generates the project list
   var template = '\
     <b>My Projects (<a href="http://code.google.com/u/<%= googleCode %>">Google</a>, <a href="http://github.com/<%= gitHub %>">GitHub</a>)</b>\
     <ul>\
@@ -23,6 +27,7 @@ var projectBadge = function () {
   
   return {
     load: function (account, options) {
+      
       if(account.gitHub){
         accounts = accounts + 'github:' + account.gitHub + ',';
       }
@@ -33,12 +38,14 @@ var projectBadge = function () {
         filters = filters + options.filters;
       }
       
+      // JSONP call
       $.getJSON(serviceUri + accounts + filters + '&callback=?', function(data) {      
-
         var projectsBadge = $('#project-badge');
-
+        
+        // render the template
         projectsBadge.html(projectBadge.renderTemplate(template, { gitHub: account.gitHub, googleCode: account.googleCode, projects : data }));
-    
+
+        // mouse behaviours    
         var projectsList = projectsBadge.find('ul');
         var projects = projectsList.find('li');
         
@@ -57,7 +64,7 @@ var projectBadge = function () {
   }
 }();
  
-// Yanked from: http://ejohn.org/blog/javascript-micro-templating/
+// Yanked and modified this from: http://ejohn.org/blog/javascript-micro-templating/ Thank John!
 //
 // Simple JavaScript Templating
 // John Resig - http://ejohn.org/ - MIT Licensed
