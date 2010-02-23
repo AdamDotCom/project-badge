@@ -13,7 +13,7 @@ var projectBadge = function () {
     <b>My Projects (<a href="http://code.google.com/u/<%= googleCode %>">Google</a>, <a href="http://github.com/<%= gitHub %>">GitHub</a>)</b>\
     <ul>\
       <% for ( var i = 0; i < projects.length; i++ ) { %>\
-        <li class="<%= ((projects[i].Url.indexOf("github") !== -1) ? "github" : "google-code") %><%= (i % 2 == 1 ? " even" : "") %>">\
+        <li class="<%= ((projects[i].Url.indexOf("github") !== -1) ? "github" : "google-code") %><%= (i % 2 === 1 ? " even" : "") %>">\
           <a href="<%= projects[i].Url %>"><%= projects[i].Name %></a>\
           <div class="extended">\
             <span class="description"><%= projects[i].Description %></span>\
