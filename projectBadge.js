@@ -10,7 +10,7 @@ var projectBadge = function () {
   
   // Template / partial that generates the project list
   var template = '\
-    <b>My Projects (<a href="http://code.google.com/u/<%= googleCode %>">Google</a>, <a href="http://github.com/<%= gitHub %>">GitHub</a>)</b>\
+    <b>My Projects (<%= googleCode ? "<a href=\'http://code.google.com/u/" + googleCode + "\'>Google</a>" : "" %><%= googleCode && gitHub ? ", " : "" %><%= gitHub ? "<a href=\'http://github.com/" + gitHub + "\'>GitHub</a>" : "" %>)</b>\
     <ul>\
       <% for ( var i = 0; i < projects.length; i++ ) { %>\
         <li class="<%= ((projects[i].Url.indexOf("github") !== -1) ? "github" : "google-code") %><%= (i % 2 === 1 ? " even" : "") %>">\
